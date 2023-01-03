@@ -1,0 +1,16 @@
+---
+ - name: Playbook
+   hosts: n1
+   become: yes
+
+   tasks: 
+     - name: install httpd
+       yum: 
+         name: httpd
+         state: latest
+
+     - name: ensure httpd is started
+       yum:
+          name: httpd
+          state: started
+...
